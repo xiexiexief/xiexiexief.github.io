@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>表格定位</title>
+    <style media="screen">
+      td{
+        width:50px;
+        height:50px;
+      }
+    </style>
+    <script src="./jquery-1.8.3.min.js" charset="utf-8"></script>
+    <script type="text/javascript">
+      //请在此处添加JS代码实现需求
+      $(function(){
+      	//$('#test').aaa='aaaa';
+      	// var aa = $('tr');
+      	// 	 for (var i = 0; i < aa.length; i++) {
+      	// 	 	for (var j = 0; j < aa[i].children.length ; j++) {
+      	// 	 		aa[i].children[j].aaa = '第'+i+'行'+'第'+j+'列';
+      	// 	 		$(aa[i].children[j]).click(function(){
+      	// 	 				$('#result').html(this.aaa);
+      	// 	 		});
+      	// 	 	}
+      	// 	 }
+      	//
+      	$('table').click(function(event){
+      		var i=event.target.parentNode.rowIndex+1;
+      		var j=event.target.cellIndex+1;
+      		var val='第'+i+'行'+'第'+j+'列';
+      		 $('#result').html(val);
+      		// parentNode.rowIndex
+      		// cellIndex
+      	})
+
+      });
+      	// var tr_leng=$('tr').length;
+      // 	var td_leng=$('#tr1>td').length;
+      // 		for(var i=0;i<tr_leng;i++){
+      // 			for(var j=0;j<td_leng;j++){
+
+      // 				$('tr')[i].children[j].onclick=(function(i,j){
+      // 				return	function(){
+      // 						var text='第'+(i+1)+'行'+'第'+(j+1)+'列';
+      // 						$('#result').html(text);
+      // 					}
+      // 				})(i,j);
+     
+      // 				$('tr')[i].children[j].onmouseout=function(){
+      // 						var text='';
+      // 						$('#result').html(text);
+      // 				}
+      // 			}
+      // 		}
+      // });
+    </script>
+  </head>
+  <body>
+    <table border='1px solid gray'>
+      <tr id='tr1'>
+        <td id='test'></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+    被点击的单元格位于:
+    <div id='result' class="">
+      <!-- 请把定位结果填充到此处 -->
+    </div>
+  </body>
+</html>

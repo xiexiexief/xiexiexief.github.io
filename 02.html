@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>悬浮放大菜单</title>
+    <style media="screen">
+      h1{
+        background: gray;
+      }
+      ul{
+        list-style: none;
+        padding: 0px;
+        margin: 0px;
+      }
+      li{
+        width: 300px;
+        left:0px;
+      }
+    </style>
+    <script src="./jquery-1.8.3.min.js" charset="utf-8"></script>
+    <script type="text/javascript">
+      //请在这里添加JS代码实现需求
+      $(function(){
+        $("div:contains('海外名表') li:even").css('background-color','cyan');
+        $("div:contains('海外名表') li:odd").css('background-color','pink');
+        $("div:contains('世界名酒') li:even").css('background-color','yellow');
+        $("div:contains('世界名酒') li:odd").css('background-color','orange');
+        $("div li").hover(function(even){
+            $(even.target).css({'width':'300px','padding':'5px 0px','margin-left':'20px','font-size':'130%'});
+        },function(even){
+             $(even.target).css({'width':'300px','padding':'0px','margin':'0px','font-size':'100%'});
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div class="">
+      <h3>海外名表:</h3>
+      <ul>
+        <li>江诗丹顿</li>
+        <li>百达翡丽</li>
+        <li>劳力士</li>
+        <li>卡地亚</li>
+        <li>欧米茄</li>
+        <li>天梭</li>
+      </ul>
+    </div>
+    <div class="">
+      <h3>世界名酒:</h3>
+      <ul>
+        <li>威士忌</li>
+        <li>白兰地</li>
+        <li>琴</li>
+        <li>雪莉</li>
+        <li>伏特加</li>
+        <li>朗姆</li>
+        <li>龙舌兰</li>
+      </ul>
+    </div>
+  </body>
+</html>
